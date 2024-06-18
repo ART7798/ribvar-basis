@@ -60,22 +60,22 @@ html {
 
 .intro {
   height: 70vh;
-  background: var(--rbvbgmain) url("../images/backgrounds/landscape.jpg") center;
+  background: var(--rbvbgmain) url("[##cms.cms.cdn##]/images/backgrounds/landscape.jpg") center;
   background-size: cover;
 }
 .intro2 {
   height: 70vh;
-  background: var(--rbvbgmain) url("../images/backgrounds/landscape.jpg") center;
+  background: var(--rbvbgmain) url("[##cms.cms.cdn##]/images/backgrounds/landscape.jpg") center;
   background-size: cover;
 }
 .intro3 {
   height: 70vh;
-  background: var(--rbvbgmain) url("../images/backgrounds/landscape.jpg") center;
+  background: var(--rbvbgmain) url("[##cms.cms.cdn##]/images/backgrounds/landscape.jpg") center;
   background-size: cover;
 }
 
 .aboutIntro {
-  background: url("../images/backgrounds/about-intro.png") top center no-repeat;
+  background: url("[##cms.cms.cdn##]/images/backgrounds/about-intro.png") top center no-repeat;
   background-size: contain;
 }
 
