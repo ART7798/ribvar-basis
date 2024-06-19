@@ -1,5 +1,10 @@
 <basis core="dbsource" source="basiscore" name="tours" mid="20" lid="1">
-  <member type="list" name="The-latest-tours" catId="208119" />
+  <member
+    type="list"
+    name="The-latest-tours"
+    catId="208119"
+    propertyId="8181 , 8076"
+  />
 </basis>
 
 <basis core="dbsource" source="basiscore" name="visa" mid="1" lid="1">
@@ -14,9 +19,15 @@
   <member type="list" name="Tourism-magazine" catId="208166" />
 </basis>
 
-
-
-
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="5"
+  lid="1"
+  usedforid="[##cms.cms.ownerid##]"
+  ><member name="info" type="view"></member
+></basis>
 
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
@@ -1177,7 +1188,7 @@
             <div class="flex items-center justify-between">
               <a
                 class="w-28 h-9 flex justify-center items-center rounded-lg hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue"
-                href=@link
+                href="@link"
                 >خواندن مطلب</a
               >
 
@@ -1273,45 +1284,32 @@
       </face>
     </basis>
 
-    <!-- about section -->
-    <section class="max-w-screen-xl mx-auto mt-20 lg:mt-28 p-4 mb-20 lg:mb-32">
-      <h2
-        class="font-bold text-lg sm:text-xl md:text-2xl mb-5 text-rbvtxtprimary"
-      >
-        درباره ریبوار
-      </h2>
+    <!-- about ribvar -->
+    <basis core="view" datamembername="db.info">
+      <layout>
+        <section
+          class="max-w-screen-xl mx-auto mt-20 lg:mt-28 p-4 mb-20 lg:mb-32"
+        >
+          <h2
+            class="font-bold text-lg sm:text-xl md:text-2xl mb-5 text-rbvtxtprimary"
+          >
+            درباره ریبوار
+          </h2>
+          <div
+            class="mb-8 text-rbvtxtprimary leading-6 text-justify text-sm xs:text-base"
+          >
+            @child
+          </div>
 
-      <p
-        class="mb-8 text-rbvtxtprimary leading-6 text-justify text-sm xs:text-base"
-      >
-        متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-        می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-        صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید
-        متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-        می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-        صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-        نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-        می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-        صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-        نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-        می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-        صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-        نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-        می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-        صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-        نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-        می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن
-        صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید
-      </p>
-
-      <a
-        class="w-max flex justify-center items-cente hover:text-rbvhelpersecondary duration-300 text-[#0487FF] font-normal text-sm"
-        href="#"
-        >مشاهده ادامه مطلب</a
-      >
-    </section>
-
-
+          <a
+            class="w-max flex justify-center items-cente hover:text-rbvhelpersecondary duration-300 text-[#0487FF] font-normal text-sm"
+            href="#"
+            >مشاهده ادامه مطلب</a
+          >
+        </section>
+      </layout>
+      <face filter="TypeID = 144"> @Answer </face>
+    </basis>
 
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <!-- footer :) -->

@@ -127,7 +127,7 @@ html {
   .nav-container * {
     color: var(--rbvbgmain) !important;
   }
-  .nav-container li:hover {
+  .nav-container li a:hover {
     color: var(--rbvtxtblue) !important;
   }
 }

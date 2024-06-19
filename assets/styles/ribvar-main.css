@@ -1175,6 +1175,10 @@ video {
   height: 36px;
 }
 
+.h-\[370px\] {
+  height: 370px;
+}
+
 .h-\[395px\] {
   height: 395px;
 }
@@ -1193,14 +1197,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[370px\] {
-  height: 370px;
 }
 
 .max-h-48 {
@@ -3576,7 +3572,7 @@ html {
     color: var(--rbvbgmain) !important;
   }
 
-  .nav-container li:hover {
+  .nav-container li a:hover {
     color: var(--rbvtxtblue) !important;
   }
 }
