@@ -22,7 +22,6 @@ window.addEventListener("load", () => {
   navContainer.classList.add("hidden");
 });
 
-
 // index (homepage) swipers
 var swiper = new Swiper(".airSwiper", {
   cssMode: true,
@@ -88,7 +87,6 @@ var swiper = new Swiper(".articlesSwiper", {
   keyboard: true,
 });
 
-
 // article and tours dropdown
 const dropdownBtn = document.getElementById("filterButton");
 dropdownBtn.addEventListener("click", function () {
@@ -114,4 +112,14 @@ dropdownBtn.addEventListener("click", function () {
     dropdownBtn.childNodes[1].classList.add("rotate-0");
     dropdownBtn.childNodes[1].classList.remove("rotate-180");
   }
+});
+
+const tourDaysElements = document.querySelectorAll(".tour-days");
+const tourNightsElements = document.querySelectorAll(".tour-nights");
+
+tourDaysElements.forEach((tourDays) => {
+  tourDays.innerText = tourDays.innerText.split(" و ")[1];
+});
+tourNightsElements.forEach((tourNights) => {
+  tourNights.innerText = tourNights.innerText.split(" و ")[0];
 });
