@@ -114,6 +114,7 @@ dropdownBtn.addEventListener("click", function () {
   }
 });
 
+// for tour prpId
 const tourDaysElements = document.querySelectorAll(".tour-days");
 const tourNightsElements = document.querySelectorAll(".tour-nights");
 
@@ -122,4 +123,25 @@ tourDaysElements.forEach((tourDays) => {
 });
 tourNightsElements.forEach((tourNights) => {
   tourNights.innerText = tourNights.innerText.split(" و ")[0];
+});
+
+const tourPriceElements = document.querySelectorAll(".tour-price");
+tourPriceElements.forEach((price) => {
+  price.textContent = price.textContent.replace(/ تومان/g, "");
+});
+
+// pagination in tours page and magazines page
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const currentPage = params.get("pageno");
+  if (currentPage) {
+    const pageLinks = document.querySelectorAll(".page-number");
+
+    pageLinks.forEach((link) => {
+      if (link.innerText.toString() === currentPage.toString()) {
+        link.classList.add("bg-rbvblue");
+        link.classList.remove("bg-rbvhelpersecondary");
+      }
+    });
+  }
 });

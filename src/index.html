@@ -12,11 +12,16 @@
 </basis>
 
 <basis core="dbsource" source="basiscore" name="news" mid="1" lid="1">
-  <member type="list" name="Daily-news" catId="208121" />
+  <member type="list" name="Daily-news" catId="208121" propertyId="7244" />
 </basis>
 
 <basis core="dbsource" source="basiscore" name="magazine" mid="1" lid="1">
-  <member type="list" name="Tourism-magazine" catId="208166" />
+  <member
+    type="list"
+    name="Tourism-magazine"
+    catId="208166"
+    propertyId="7244"
+  />
 </basis>
 
 <basis
@@ -28,7 +33,6 @@
   usedforid="[##cms.cms.ownerid##]"
   ><member name="info" type="view"></member
 ></basis>
-
 
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
@@ -55,13 +59,28 @@
     <div class="slider__container w-full swiper heroSwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="intro rounded-b-3xl sm:rounded-b-[50px]"></div>
+          <div
+            class="intro rounded-b-3xl sm:rounded-b-[50px] h-[70vh] bg-cover bg-center"
+            style="
+              background-image: url('[##cms.cms.cdn##]/images/backgrounds/landscape.jpg');
+            "
+          ></div>
         </div>
         <div class="swiper-slide">
-          <div class="intro2 rounded-b-3xl sm:rounded-b-[50px]"></div>
+          <div
+            class="intro-2 rounded-b-3xl sm:rounded-b-[50px] h-[70vh] bg-cover bg-center"
+            style="
+              background-image: url('[##cms.cms.cdn##]/images/backgrounds/landscape.jpg');
+            "
+          ></div>
         </div>
         <div class="swiper-slide">
-          <div class="intro3 rounded-b-3xl sm:rounded-b-[50px]"></div>
+          <div
+            class="intro-3 rounded-b-3xl sm:rounded-b-[50px] h-[70vh] bg-cover bg-center"
+            style="
+              background-image: url('[##cms.cms.cdn##]/images/backgrounds/landscape.jpg');
+            "
+          ></div>
         </div>
       </div>
 
@@ -152,13 +171,167 @@
         </section>
       </layout>
 
+      <face filter="link is null and prp_8076 is null">
+        <div
+          class="swiper-slide tours__container__card tourCard w-72 2xl:!w-75 h-85 rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
+        >
+          <img
+            src="@image"
+            alt="@title"
+            class="tourCard__img object-cover w-full h-full"
+          />
+
+          <div
+            class="tourCard__container absolute bg-gradient-to-t from-rbvlinearblack to-transparent w-full h-full top-0 left-0 text-white flex flex-col justify-between p-3"
+          >
+            <!-- tour card head section (airline and rating) -->
+            <div
+              class="tourCard__container__head flex justify-between items-center"
+            >
+              <div
+                class="tourCard__container__head__rating flex justify-center items-center bg-rbvbgaccent rounded-md w-[34px] h-[30px]"
+              >
+                <span class="text-[#6A500C]">8.8</span>
+              </div>
+
+              <div
+                class="tourCard__container__head__airline flex justify-center items-center gap-0.5"
+              >
+                <span class="pt-1">@prp_10000504</span>
+                <img
+                  src="[##cms.cms.cdn##]/images/tours/Turkish.svg"
+                  alt="turkishImg"
+                />
+              </div>
+            </div>
+
+            <!-- tour card description section (city, duration price and etc.) -->
+            <div class="tourCard__container__desc text-white">
+              <!-- card description title -->
+              <h3
+                class="tourCard__container__desc__title font-bold text-2xl mb-3"
+              >
+                @title
+              </h3>
+
+              <!-- card description period -->
+              <div
+                class="tourCard__container__desc__details flex justify-between mb-5 gap-5"
+              >
+                <div class="flex justify-center items-end gap-1">
+                  <span class="text-sm font-medium">@date</span>
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.59375 9.40234H21.4177"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.9453 13.3086H16.9546"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.5078 13.3086H12.5171"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.05469 13.3086H8.06395"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.9453 17.1953H16.9546"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M12.5078 17.1953H12.5171"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.05469 17.1953H8.06395"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.5469 2V5.29078"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.46875 2V5.29078"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M16.7383 3.57812H8.27096C5.33427 3.57812 3.5 5.21406 3.5 8.22115V17.2708C3.5 20.3252 5.33427 21.9989 8.27096 21.9989H16.729C19.675 21.9989 21.5 20.3535 21.5 17.3464V8.22115C21.5092 5.21406 19.6842 3.57812 16.7383 3.57812Z"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- tour card price and see more section -->
+              <div
+                class="tourCard__container__more flex items-end justify-between"
+              >
+                <a
+                  class="w-[115px] h-[36px] border border-white border-solid flex justify-center items-center rounded-[10px] hover:border-rbvhelpersecondary hover:bg-rbvmain hover:scale-105 hover:text-white duration-100 text-sm font-normal mb-2"
+                  href="#"
+                  >مشاهده</a
+                >
+
+                <div class="flex flex-col items-end">
+                  <span class="font-medium text-[20px]">تومان</span>
+                  <span class="font-normal text-[20px] tour-price"
+                    >@prp_8181</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </face>
+
       <face filter="link is null">
         <div
           class="swiper-slide tours__container__card tourCard w-72 2xl:!w-75 h-85 rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
         >
           <img
             src="@image"
-            alt="instanbul"
+            alt="@title"
             class="tourCard__img object-cover w-full h-full"
           />
 
@@ -345,20 +518,23 @@
 
                 <div class="flex flex-col items-end">
                   <span class="font-medium text-[20px]">تومان</span>
-                  <span class="font-normal text-[20px]">14/000/000</span>
+                  <span class="font-normal text-[20px] tour-price"
+                    >@prp_8181</span
+                  >
                 </div>
               </div>
             </div>
           </div>
         </div>
       </face>
+
       <face>
         <div
           class="swiper-slide tours__container__card tourCard w-72 2xl:!w-75 h-85 rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
         >
           <img
             src="@image"
-            alt="instanbul"
+            alt="@title"
             class="tourCard__img object-cover w-full h-full"
           />
 
@@ -545,7 +721,9 @@
 
                 <div class="flex flex-col items-end">
                   <span class="font-medium text-[20px]">تومان</span>
-                  <span class="font-normal text-[20px]">14/000/000</span>
+                  <span class="font-normal text-[20px] tour-price"
+                    >@prp_8181</span
+                  >
                 </div>
               </div>
             </div>
@@ -585,7 +763,7 @@
           <img
             src="@image"
             alt="@title"
-            class="tourCard__img object-cover w-full h-full"
+            class="tourCard__img object-fill w-full h-full"
           />
 
           <div
@@ -626,7 +804,7 @@
           <img
             src="@image"
             alt="@title"
-            class="tourCard__img object-cover w-full h-full"
+            class="tourCard__img object-fill w-full h-full"
           />
 
           <div
@@ -668,7 +846,7 @@
           class="slider__container w-full mt-20 lg:mt-[160px] swiper airSwiper flex justify-center"
         >
           <div class="swiper-wrapper h-auto pt-36 flex items-end">@child</div>
-          <div class="btns w-full max-w-[1210px] h-12 absolute top-0">
+          <div class="btns w-full max-w-screen-xl h-12 absolute top-0">
             <div
               class="swiper-button-next transform hover:scale-125 transition-all duration-300 hover:cursor-pointer"
             >
@@ -718,12 +896,12 @@
       </layout>
 
       <face filter="link is null">
-        <div class="swiper-slide bg-rbvbgsecondary">
+        <div class="swiper-slide bg-rbvbgsecondary h-[680px] md:h-auto">
           <div
             class="max-w-screen-xl mx-auto md:relative flex flex-col-reverse md:flex-row w-full"
           >
             <div
-              class="slider__container__desc w-full md:w-5/12 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8 -mt-16 md:mt-0 xl:pl-0"
+              class="slider__container__desc w-full md:w-1/2 xl:w-5/12 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8 -mt-16 md:mt-0"
             >
               <h4
                 class="mb-3 md:mb-9 mt-4 md:mt-0 font-bold text-lg sm:text-xl md:text-2xl lg:!text-[32px] text-rbvtxtprimary drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
@@ -731,16 +909,9 @@
                 @title
               </h4>
               <p
-                class="mb-8 text-rbvtxtprimary font-normal leading-6 text-md xs:text-base"
+                class="mb-8 text-rbvtxtprimary font-normal leading-6 text-md xs:text-base line-clamp-4 lg:line-clamp-6"
               >
-                متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته
-                شده استفاده می نماید متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به
-                عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل
-                ظاهری و کلی طرح سفارش گرفته شده استفاده می نمایدمتنی آزمایشی و
-                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
+                @prp_7244
               </p>
 
               <div class="text-[#97BEC2] flex gap-3 mb-8">
@@ -826,7 +997,7 @@
                     />
                   </svg>
 
-                  <span class="text-[#97BEC2] text-[13px] mt-1">1403/2/12</span>
+                  <span class="text-[#97BEC2] text-[13px] mt-1">@date</span>
                 </div>
 
                 <div class="flex gap-1 items-center">
@@ -866,7 +1037,7 @@
               >
             </div>
             <img
-              class="object-contain w-full md:w-7/12 p-4 xl:p-0 mx-auto !max-w-[400px] !max-h-[650px] md:!max-w-[700px] relative left-0 -top-[100px] lg:-top-[80px]"
+              class="object-fill w-full md:w-1/2 xl:w-7/12 p-4 xl:p-0 mx-auto !max-w-[400px] !max-h-[650px] md:!max-w-[700px] relative left-0 -top-[100px] lg:-top-[80px]"
               src="@image"
               alt="@title"
             />
@@ -874,12 +1045,12 @@
         </div>
       </face>
       <face>
-        <div class="swiper-slide bg-rbvbgsecondary">
+        <div class="swiper-slide bg-rbvbgsecondary h-[680px] md:h-auto">
           <div
             class="max-w-screen-xl mx-auto md:relative flex flex-col-reverse md:flex-row w-full"
           >
             <div
-              class="slider__container__desc w-full md:w-5/12 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8 -mt-16 md:mt-0 xl:pl-0"
+              class="slider__container__desc w-full md:w-1/2 xl:w-5/12 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8 -mt-16 md:mt-0"
             >
               <h4
                 class="mb-3 md:mb-9 mt-4 md:mt-0 font-bold text-lg sm:text-xl md:text-2xl lg:!text-[32px] text-rbvtxtprimary drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
@@ -887,16 +1058,9 @@
                 @title
               </h4>
               <p
-                class="mb-8 text-rbvtxtprimary font-normal leading-6 text-md xs:text-base"
+                class="mb-8 text-rbvtxtprimary font-normal leading-6 text-md xs:text-base line-clamp-4 lg:line-clamp-6"
               >
-                متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته
-                شده استفاده می نماید متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به
-                عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل
-                ظاهری و کلی طرح سفارش گرفته شده استفاده می نمایدمتنی آزمایشی و
-                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
+                @prp_7244
               </p>
 
               <div class="text-[#97BEC2] flex gap-3 mb-8">
@@ -982,7 +1146,7 @@
                     />
                   </svg>
 
-                  <span class="text-[#97BEC2] text-[13px] mt-1">1403/2/12</span>
+                  <span class="text-[#97BEC2] text-[13px] mt-1">@date</span>
                 </div>
 
                 <div class="flex gap-1 items-center">
@@ -1022,7 +1186,7 @@
               >
             </div>
             <img
-              class="object-contain w-full md:w-7/12 p-4 xl:p-0 mx-auto !max-w-[400px] !max-h-[650px] md:!max-w-[700px] relative left-0 -top-[100px] lg:-top-[80px]"
+              class="object-fill w-full md:w-1/2 xl:w-7/12 p-4 xl:p-0 mx-auto !max-w-[400px] !max-h-[650px] md:!max-w-[700px] relative left-0 -top-[100px] lg:-top-[80px]"
               src="@image"
               alt="@title"
             />
@@ -1056,11 +1220,10 @@
           <div class="p-3">
             <h3 class="font-bold text-rbvtxtprimary mb-2">@title</h3>
 
-            <p class="line-clamp-3 mb-8 text-rbvtxtprimary font-normal text-sm">
-              هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده
-              و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم هستند کسانی که
-              فکر می‌کنند عمان یک کشور بیابانی دورافتاده و نه‌چندان جذاب عربی
-              است و زندگی در عمان
+            <p
+              class="line-clamp-3 mb-8 text-rbvtxtprimary font-normal text-sm min-h-[60px]"
+            >
+              @prp_7244
             </p>
 
             <!-- card see more -->
@@ -1176,11 +1339,10 @@
           <div class="p-3">
             <h3 class="font-bold text-rbvtxtprimary mb-2">@title</h3>
 
-            <p class="line-clamp-3 mb-8 text-rbvtxtprimary font-normal text-sm">
-              هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده
-              و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم هستند کسانی که
-              فکر می‌کنند عمان یک کشور بیابانی دورافتاده و نه‌چندان جذاب عربی
-              است و زندگی در عمان
+            <p
+              class="line-clamp-3 mb-8 text-rbvtxtprimary font-normal text-sm min-h-[60px]"
+            >
+              @prp_7244
             </p>
 
             <!-- card see more -->

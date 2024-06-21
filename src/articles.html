@@ -1,3 +1,34 @@
+<basis core="dbsource" source="basiscore" name="news" mid="1" lid="1">
+  <member type="list" name="Daily-news" catId="208121" propertyId="7244" />
+</basis>
+
+<!-- <basis core="dbsource" source="basiscore" name="magazine" mid="1" lid="1">
+  <member
+    type="list"
+    name="Tourism-magazine"
+    catId="208166"
+    propertyId="7244"
+  />
+</basis> -->
+
+<basis core="dbsource" source="basiscore" name="magazine" mid="1" lid="1">
+  <member
+    type="list"
+    name="Tourism-magazine"
+    catId="208166"
+    propertyId="7244"
+    perpage="2"
+    pageno="[##cms.query.pageno|(1)##]"
+  />
+  <member
+    name="paging"
+    type="list"
+    request="paging"
+    count="2"
+    parentname="Tourism-magazine"
+  />
+</basis>
+
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
   <head>
@@ -18,33 +49,35 @@
     <basis core="call" file="header.inc" />
 
     <!-- slider section -->
-    <div
-      class="slider__container w-full my-20 lg:mb-[128px] swiper articlesSwiper flex justify-center"
-    >
-      <div class="swiper-wrapper">
-        <div class="swiper-slide bg-rbvbgsecondary">
+    <basis core="list" datamembername="news.Daily-news">
+      <layout>
+        <div
+          class="slider__container w-full my-20 lg:mb-[128px] swiper articlesSwiper flex justify-center"
+        >
+          <div class="swiper-wrapper">@child</div>
+
+          <div class="swiper-pagination absolute top-[80%]"></div>
+        </div>
+      </layout>
+      <face filter="link is null">
+        <div
+          class="swiper-slide bg-rbvbgsecondary pt-6 pb-12 h-[760px] md:h-auto"
+        >
           <div
             class="max-w-screen-xl mx-auto md:relative flex flex-col-reverse md:flex-row w-full"
           >
             <div
-              class="slider__container__desc w-full md:w-1/2 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8"
+              class="slider__container__desc w-full md:w-1/2 xl:w-5/12 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8"
             >
               <h4
                 class="mb-3 md:mb-9 mt-4 md:mt-0 font-bold text-lg sm:text-xl md:text-2xl lg:!text-[32px] text-rbvtxtprimary drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
               >
-                زندگی در مالدیو بهشت زمین
+                @title
               </h4>
               <p
-                class="text-rbvtxtprimary font-normal leading-6 text-justify text-sm xs:text-base"
+                class="text-rbvtxtprimary font-normal leading-6 text-justify text-sm xs:text-base line-clamp-4 lg:line-clamp-6"
               >
-                متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته
-                شده استفاده می نماید متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به
-                عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل
-                ظاهری و کلی طرح سفارش گرفته شده استفاده می نمایدمتنی آزمایشی و
-                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
+                @prp_7244
               </p>
 
               <div class="text-[#97BEC2] my-8">
@@ -130,7 +163,7 @@
                     />
                   </svg>
 
-                  <span class="text-[#97BEC2] text-[13px] mt-1">1403/2/12</span>
+                  <span class="text-[#97BEC2] text-[13px] mt-1">@date</span>
                 </div>
               </div>
 
@@ -141,35 +174,32 @@
               >
             </div>
             <img
-              class="object-contain w-full md:w-1/2 mx-auto max-w-[400px] md:!max-w-[700px] relative left-0 top-0"
-              src="[##cms.cms.cdn##]/images/slider/airplanewithshadow.png"
-              alt=""
+              class="object-fill w-full md:w-1/2 xl:w-7/12 mx-auto !max-w-[400px] md:!max-w-[700px] !max-h-[650px] relative left-0 top-0 p-4 xl:p-0"
+              src="@image"
+              alt="@title"
             />
           </div>
         </div>
-        <div class="swiper-slide bg-rbvbgsecondary">
+      </face>
+      <face>
+        <div
+          class="swiper-slide bg-rbvbgsecondary pt-6 pb-12 h-[760px] md:h-auto"
+        >
           <div
             class="max-w-screen-xl mx-auto md:relative flex flex-col-reverse md:flex-row w-full"
           >
             <div
-              class="slider__container__desc w-full md:w-1/2 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8"
+              class="slider__container__desc w-full md:w-1/2 xl:w-5/12 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8"
             >
               <h4
                 class="mb-3 md:mb-9 mt-4 md:mt-0 font-bold text-lg sm:text-xl md:text-2xl lg:!text-[32px] text-rbvtxtprimary drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
               >
-                زندگی در مالدیو بهشت زمین
+                @title
               </h4>
               <p
-                class="text-rbvtxtprimary font-normal leading-6 text-justify text-sm xs:text-base"
+                class="text-rbvtxtprimary font-normal leading-6 text-justify text-sm xs:text-base line-clamp-4 lg:line-clamp-6"
               >
-                متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته
-                شده استفاده می نماید متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به
-                عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل
-                ظاهری و کلی طرح سفارش گرفته شده استفاده می نمایدمتنی آزمایشی و
-                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
+                @prp_7244
               </p>
 
               <div class="text-[#97BEC2] my-8">
@@ -255,277 +285,25 @@
                     />
                   </svg>
 
-                  <span class="text-[#97BEC2] text-[13px] mt-1">1403/2/12</span>
+                  <span class="text-[#97BEC2] text-[13px] mt-1">@date</span>
                 </div>
               </div>
 
               <a
                 class="min-h-9 w-max px-5 py-2 border text-rbvblue border-rbvblue border-solid mb-0 flex justify-center items-center rounded-lg hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100"
-                href="#"
+                href="@link"
                 >خواندن مطلب</a
               >
             </div>
             <img
-              class="object-contain w-full md:w-1/2 mx-auto max-w-[400px] md:!max-w-[700px] relative left-0 top-0"
-              src="[##cms.cms.cdn##]/images/slider/airplanewithshadow.png"
-              alt=""
+              class="object-fill w-full md:w-1/2 xl:w-7/12 mx-auto !max-w-[400px] md:!max-w-[700px] !max-h-[650px] relative left-0 top-0 p-4 xl:p-0"
+              src="@image"
+              alt="@title"
             />
           </div>
         </div>
-        <div class="swiper-slide bg-rbvbgsecondary">
-          <div
-            class="max-w-screen-xl mx-auto md:relative flex flex-col-reverse md:flex-row w-full"
-          >
-            <div
-              class="slider__container__desc w-full md:w-1/2 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8"
-            >
-              <h4
-                class="mb-3 md:mb-9 mt-4 md:mt-0 font-bold text-lg sm:text-xl md:text-2xl lg:!text-[32px] text-rbvtxtprimary drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-              >
-                زندگی در مالدیو بهشت زمین
-              </h4>
-              <p
-                class="text-rbvtxtprimary font-normal leading-6 text-justify text-sm xs:text-base"
-              >
-                متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته
-                شده استفاده می نماید متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به
-                عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل
-                ظاهری و کلی طرح سفارش گرفته شده استفاده می نمایدمتنی آزمایشی و
-                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
-              </p>
-
-              <div class="text-[#97BEC2] my-8">
-                <div class="flex items-center gap-1">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.32031 7.05469H15.6883"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.3281 9.98047H12.3351"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 9.98047H9.00695"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M5.67188 9.98047H5.67882"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.3281 12.8984H12.3351"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 12.8984H9.00695"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M5.67188 12.8984H5.67882"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.0312 1.5V3.96809"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M5.97656 1.5V3.96809"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span class="text-[#97BEC2] text-[13px] mt-1">1403/2/12</span>
-                </div>
-              </div>
-
-              <a
-                class="min-h-9 w-max px-5 py-2 border text-rbvblue border-rbvblue border-solid mb-0 flex justify-center items-center rounded-lg hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100"
-                href="#"
-                >خواندن مطلب</a
-              >
-            </div>
-            <img
-              class="object-contain w-full md:w-1/2 mx-auto max-w-[400px] md:!max-w-[700px] relative left-0 top-0"
-              src="[##cms.cms.cdn##]/images/slider/airplanewithshadow.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="swiper-slide bg-rbvbgsecondary">
-          <div
-            class="max-w-screen-xl mx-auto md:relative flex flex-col-reverse md:flex-row w-full"
-          >
-            <div
-              class="slider__container__desc w-full md:w-1/2 flex flex-col md:justify-center pt-0 md:pt-8 p-4 pb-12 md:pb-8"
-            >
-              <h4
-                class="mb-3 md:mb-9 mt-4 md:mt-0 font-bold text-lg sm:text-xl md:text-2xl lg:!text-[32px] text-rbvtxtprimary drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-              >
-                زندگی در مالدیو بهشت زمین
-              </h4>
-              <p
-                class="text-rbvtxtprimary font-normal leading-6 text-justify text-sm xs:text-base"
-              >
-                متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته
-                شده استفاده می نماید متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به
-                عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل
-                ظاهری و کلی طرح سفارش گرفته شده استفاده می نمایدمتنی آزمایشی و
-                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.
-              </p>
-
-              <div class="text-[#97BEC2] my-8">
-                <div class="flex items-center gap-1">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.32031 7.05469H15.6883"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.3281 9.98047H12.3351"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 9.98047H9.00695"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M5.67188 9.98047H5.67882"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.3281 12.8984H12.3351"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9 12.8984H9.00695"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M5.67188 12.8984H5.67882"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.0312 1.5V3.96809"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M5.97656 1.5V3.96809"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                      stroke="#97BEC2"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span class="text-[#97BEC2] text-[13px] mt-1">1403/2/12</span>
-                </div>
-              </div>
-
-              <a
-                class="min-h-9 w-max px-5 py-2 border text-rbvblue border-rbvblue border-solid mb-0 flex justify-center items-center rounded-lg hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100"
-                href="#"
-                >خواندن مطلب</a
-              >
-            </div>
-            <img
-              class="object-contain w-full md:w-1/2 mx-auto max-w-[400px] md:!max-w-[700px] relative left-0 top-0"
-              src="[##cms.cms.cdn##]/images/slider/airplanewithshadow.png"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-pagination absolute top-[80%]"></div>
-    </div>
+      </face>
+    </basis>
 
     <!-- articles section -->
     <section
@@ -713,1123 +491,318 @@
         <!-- results container -->
         <div class="w-full">
           <!-- current page result -->
-          <div
-            class="flex flex-wrap gap-x-2 gap-y-5 justify-center sm:justify-between xl:justify-start"
-          >
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
+          <basis core="list" datamembername="magazine.Tourism-magazine">
+            <layout>
+              <div
+                class="flex flex-wrap gap-x-2 gap-y-5 justify-center sm:justify-between xl:justify-start"
+              >
+                @child
+              </div>
+            </layout>
+            <else-layout>
+              <div>اطلاعاتی ثبت نشده است</div>
+            </else-layout>
+            <face filter="link is null">
+              <div
+                class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
+              >
+                <img
+                  class="w-full h-[215px] rounded-[10px] !opacity-80 object-fill transform group-hover:scale-105 transition-all duration-300"
+                  src="@image"
+                  alt="@title"
+                />
 
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
+                <!-- card description -->
+                <div class="p-0 mt-5">
+                  <h3 class="font-bold text-rbvtxtprimary mb-3">@title</h3>
 
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
+                  <p
+                    class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%] min-h-[60px]"
                   >
+                    @prp_7244
+                  </p>
 
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
+                  <!-- card see more -->
+                  <div class="flex items-center justify-between">
+                    <a
+                      class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:text-white duration-100 text-rbvblue border border-rbvblue"
+                      href="#"
+                      >خواندن مطلب</a
+                    >
 
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
+                    <div class="flex flex-col items-end">
+                      <div class="flex gap-1 items-center">
+                        <span class="text-[13px] text-[#97BEC2] mt-1"
+                          >@date</span
+                        >
+
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.32031 7.05469H15.6883"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.3281 9.98047H12.3351"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 9.98047H9.00695"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5.67188 9.98047H5.67882"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.3281 12.8984H12.3351"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 12.8984H9.00695"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5.67188 12.8984H5.67882"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.0312 1.5V3.96809"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5.97656 1.5V3.96809"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
+                            stroke="#cbcbcb"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
+            </face>
+            <face>
+              <div
+                class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
+              >
+                <img
+                  class="w-full h-[215px] rounded-[10px] !opacity-80 object-fill transform group-hover:scale-105 transition-all duration-300"
+                  src="@image"
+                  alt="@title"
+                />
 
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
+                <!-- card description -->
+                <div class="p-0 mt-5">
+                  <h3 class="font-bold text-rbvtxtprimary mb-3">@title</h3>
 
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
+                  <p
+                    class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%] min-h-[60px]"
                   >
+                    @prp_7244
+                  </p>
 
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
+                  <!-- card see more -->
+                  <div class="flex items-center justify-between">
+                    <a
+                      class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:text-white duration-100 text-rbvblue border border-rbvblue"
+                      href="@link"
+                      >خواندن مطلب</a
+                    >
 
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
+                    <div class="flex flex-col items-end">
+                      <div class="flex gap-1 items-center">
+                        <span class="text-[13px] text-[#97BEC2] mt-1"
+                          >@date</span
+                        >
+
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.32031 7.05469H15.6883"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.3281 9.98047H12.3351"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 9.98047H9.00695"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5.67188 9.98047H5.67882"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.3281 12.8984H12.3351"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M9 12.8984H9.00695"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5.67188 12.8984H5.67882"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12.0312 1.5V3.96809"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5.97656 1.5V3.96809"
+                            stroke="#CBCBCB"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
+                            stroke="#cbcbcb"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
-            >
-              <img
-                class="w-full h-[215px] rounded-[10px] !opacity-80 object-cover transform group-hover:scale-105 transition-all duration-300"
-                src="[##cms.cms.cdn##]/images/tours/instanbul.jpg"
-                alt="instanbul"
-              />
-
-              <!-- card description -->
-              <div class="p-0 mt-5">
-                <h3 class="font-bold text-rbvtxtprimary mb-3">
-                  زندگی در استانبول
-                </h3>
-
-                <p
-                  class="line-clamp-3 mb-[18px] text-rbvtxtprimary font-normal text-sm max-w-[90%]"
-                >
-                  هنوز هم هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی
-                  دورافتاده و نه‌چندان جذاب عربی است و زندگی در عمان هنوز هم
-                  هستند کسانی که فکر می‌کنند عمان یک کشور بیابانی دورافتاده و
-                  نه‌چندان جذاب عربی است و زندگی در عمان
-                </p>
-
-                <!-- card see more -->
-                <div class="flex items-center justify-between">
-                  <a
-                    class="w-28 h-11 flex justify-center items-center rounded-[10px] hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100 text-rbvblue border border-rbvblue"
-                    href="#"
-                    >خواندن مطلب</a
-                  >
-
-                  <div class="flex flex-col items-end">
-                    <div class="flex gap-1 items-center">
-                      <span class="text-[13px] text-[#97BEC2] mt-1"
-                        >1403/2/12</span
-                      >
-
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.32031 7.05469H15.6883"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 9.98047H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 9.98047H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 9.98047H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.3281 12.8984H12.3351"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M9 12.8984H9.00695"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.67188 12.8984H5.67882"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M12.0312 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5.97656 1.5V3.96809"
-                          stroke="#CBCBCB"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12.1787 2.68359H5.82822C3.6257 2.68359 2.25 3.91054 2.25 6.16586V12.9531C2.25 15.2439 3.6257 16.4992 5.82822 16.4992H12.1718C14.3812 16.4992 15.75 15.2652 15.75 13.0098V6.16586C15.7569 3.91054 14.3882 2.68359 12.1787 2.68359Z"
-                          stroke="#cbcbcb"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            </face>
+          </basis>
 
           <!-- pagination -->
           <div
             class="flex justify-center items-center gap-4 lg:gap-8 w-full mt-20 lg:mt-[102px]"
           >
-            <!-- previous page button -->
+            <basis core="print" datamembername="magazine.paging">
+              <face filter="sta='nex'"
+                ><a href="[##cms.cms.link_page##]pageno=@page">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.2365 12.8069C16.4593 12.584 16.5713 12.2915 16.5713 11.9989C16.5713 11.7063 16.4593 11.4138 16.2365 11.1909L9.37955 4.334C8.93271 3.8872 8.21045 3.8872 7.76361 4.334C7.31677 4.7809 7.31677 5.5031 7.76361 5.95L13.8125 11.9989L7.76361 18.0478C7.31677 18.4947 7.31677 19.2169 7.76361 19.6638C8.21045 20.1106 8.93271 20.1106 9.37955 19.6638L16.2365 12.8069Z"
+                      fill="#2032A9"
+                    />
+                  </svg>
+                </a>
+              </face>
+            </basis>
+            <div class="flex flex-row-reverse gap-1.5 text-white">
+              <basis core="print" datamembername="magazine.paging">
+                <face filter="sta='no'">
+                  <a
+                    href="[##cms.cms.link_page##]pageno=@page"
+                    class="page-number size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
+                  >
+                    @page
+                  </a>
+                </face>
+              </basis>
+            </div>
+            <basis core="print" datamembername="magazine.paging">
+              <face filter="sta='pre'">
+                <a href="[##cms.cms.link_page##]pageno=@page">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.76351 11.1931C7.54071 11.416 7.42871 11.7085 7.42871 12.0011C7.42871 12.2937 7.54071 12.5862 7.76351 12.8091L14.6205 19.666C15.0673 20.1128 15.7895 20.1128 16.2364 19.666C16.6832 19.2191 16.6832 18.4969 16.2364 18.05L10.1875 12.0011L16.2364 5.95217C16.6832 5.50533 16.6832 4.78307 16.2364 4.33623C15.7896 3.88939 15.0673 3.88939 14.6205 4.33623L7.76351 11.1931Z"
+                      fill="#2032A9"
+                    />
+                  </svg>
+                </a>
+              </face>
+            </basis>
+          </div>
+
+          <!-- pagination -->
+          <!-- <div
+            class="flex justify-center items-center gap-4 lg:gap-8 w-full mt-20 lg:mt-[102px]"
+          >
+            
             <button>
               <svg
                 width="24"
@@ -1871,7 +844,7 @@
               </div>
             </div>
 
-            <!-- next page button -->
+            
             <button>
               <svg
                 width="24"
@@ -1886,7 +859,7 @@
                 />
               </svg>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -1894,6 +867,5 @@
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <!-- footer :) -->
     <basis core="call" file="footer.inc" />
-
   </body>
 </html>
