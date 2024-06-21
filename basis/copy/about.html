@@ -1,3 +1,13 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="5"
+  lid="1"
+  usedforid="[##cms.cms.ownerid##]"
+  ><member name="info" type="view"></member
+></basis>
+
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
   <head>
@@ -35,37 +45,24 @@
       <!-- <div class="aboutIntro !h-56 sm:!h-96"></div> -->
 
       <!-- about section -->
-      <section class="max-w-screen-xl mx-auto mt-12 sm:mt-16 xl:px-0">
-        <h2
-          class="font-bold text-lg sm:text-xl md:text-2xl mb-4 text-rbvtxtprimary"
-        >
-          ریبوار سفر
-        </h2>
+      <basis core="view" datamembername="db.info">
+        <layout>
+          <section class="max-w-screen-xl mx-auto mt-12 sm:mt-16 xl:px-0">
+            <h2
+              class="font-bold text-lg sm:text-xl md:text-2xl mb-4 text-rbvtxtprimary"
+            >
+              ریبوار سفر
+            </h2>
 
-        <p
-          class="text-rbvtxtprimary leading-6 text-justify text-sm xs:text-base"
-        >
-          متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته
-          می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر
-          کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-          نماید متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-          گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-          پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
-          می نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-          گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-          پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
-          می نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-          گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-          پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
-          می نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-          گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-          پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
-          می نمایدمتنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-          گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-          پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
-          می نماید
-        </p>
-      </section>
+            <div
+              class="text-rbvtxtprimary leading-6 text-justify text-sm xs:text-base"
+            >
+              @child
+            </div>
+          </section>
+        </layout>
+        <face filter="TypeID = 144"> @Answer </face>
+      </basis>
 
       <!-- office pictures -->
       <div
@@ -205,9 +202,5 @@
 
     <!-- footer :) -->
     <basis core="call" file="footer.inc" />
-
-    <!-- javascript -->
-
-    <script src="[##cms.cms.cdn##]/js/ribvar-core.js"></script>
   </body>
 </html>
