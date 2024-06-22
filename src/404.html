@@ -2,11 +2,37 @@
 <html lang="fa-IR" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <title>[##cms.seo.title|(RIBVAR)##]</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta name="description" content="[##cms.seo.description|(RIBVAR)##]" />
+    <link rel="canonical" href="[##cms.cms.full-url##]" />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link
+      rel="apple-touch-icon"
+      href="[##cms.cms.cdn##]/images/custom_icon.png"
+    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="homescreen-manifest.inc" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/ribvar-main.css" />
-
-    <title>Document</title>
   </head>
 
   <body class="bg-rbvbgmain">
@@ -18,17 +44,22 @@
       class="flex flex-col gap-3 w-full items-center custom-container py-20 lg:py-40"
     >
       <div class="max-h-[514px] max-w-[514px]">
-        <img src="[##cms.cms.cdn##]/images/404/404.svg" alt="404img" width="514" height="514" />
+        <img
+          src="[##cms.cms.cdn##]/images/404/404.svg"
+          alt="404img"
+          width="514"
+          height="514"
+        />
       </div>
       <h2 class="text-lg sm:text-xl md:text-2xl lg:!text-[32px] font-[500]">
         صفحه ای پیدا نشد
       </h2>
-      <a href="/" class="btn-404 mt-5 text-sm xs:text-base">بازگشت به صفحه اصلی</a>
+      <a href="/" class="btn-404 mt-5 text-sm xs:text-base"
+        >بازگشت به صفحه اصلی</a
+      >
     </div>
 
     <!-- footer :) -->
     <basis core="call" file="footer.inc" />
-
-    
   </body>
 </html>

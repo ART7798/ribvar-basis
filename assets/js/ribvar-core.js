@@ -154,6 +154,32 @@ try {
   console.log(error);
 }
 
+// tour load
+try {
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("/tour-list-load.bc")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("tour-content-load").innerHTML = data;
+      });
+  });
+} catch (error) {
+  console.log(error);
+}
+
+// article load
+try {
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("/article-list-load.bc")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("article-content-load").ap = data;
+      });
+  });
+} catch (error) {
+  console.log(error);
+}
+
 // pagination in tours page and magazines page
 try {
   document.addEventListener("DOMContentLoaded", function () {
