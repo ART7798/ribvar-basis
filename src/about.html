@@ -1,13 +1,5 @@
-<basis core="dbsource" source="basiscore" name="tours" mid="1" lid="1">
-  <member type="list" name="tours-list" catId="208116" perpage="4" />
-</basis>
-
 <basis core="dbsource" source="basiscore" name="db" mid="10" lid="1" >
     <member name="offices" type="list" propertyid="" size="314x314" />
-</basis>
-
-<basis core="dbsource" source="basiscore" mid="20" name="db" lid="1">
-    <member name="tour-cat" type="tree" request="cat" parentid="208116" preview="" order="ord" />
 </basis>
 
 <!DOCTYPE html>
@@ -80,7 +72,7 @@
     </basis>
 
     <!-- office pictures -->
-    <basis core="list" datamembername="tours.tours-list">
+    <basis core="list" datamembername="db.offices">
         <layout>
           <div
             class="flex flex-wrap justify-center xl:justify-between items-stretch gap-3 overflow-hidden max-w-screen-xl mx-auto mt-20 mb-[66px]"
@@ -161,8 +153,8 @@
           مارو اینجا دنبال کنید
         </h3>
         <div class="mt-3 flex flex-wrap gap-4">
-          <basis core="view" datamembername="db.info">
-            <face filter="valueID = 3974659">
+          <basis core="print" datamembername="db.info">
+            <face filter="prpID=91451 and text='اینستاگرام'">
               <a href="@Answer">
                 <svg class="transform cursor-pointer hover:scale-105" width="30" height="30" viewBox="0 0 30 30"
                   fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,8 +169,8 @@
             </face>
           </basis>
 
-          <basis core="view" datamembername="db.info">
-            <face filter="valueID = 3974659">
+          <basis core="print" datamembername="db.info">
+            <face filter="prpID=91451 and text='توییتر'">
               <a href="@Answer">
                 <svg class="transform cursor-pointer hover:scale-105" width="30" height="30" viewBox="0 0 30 30"
                   fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,8 +182,8 @@
             </face>
           </basis>
 
-          <basis core="view" datamembername="db.info">
-            <face filter="valueID = 3974659">
+          <basis core="print" datamembername="db.info">
+            <face filter="prpID=91451 and text='لینکدین'">
               <a href="@Answer">
                 <svg class="transform cursor-pointer hover:scale-105" width="30" height="30" viewBox="0 0 30 30"
                   fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,8 +195,8 @@
             </face>
           </basis>
 
-          <basis core="view" datamembername="db.info">
-            <face filter="valueID = 3974659">
+          <basis core="print" datamembername="db.info">
+           <face filter="prpID=91451 and text='تلگرام'">
               <a href="@Answer">
                 <svg class="transform cursor-pointer hover:scale-105" width="30" height="30" viewBox="0 0 30 30"
                   fill="none" xmlns="http://www.w3.org/2000/svg">

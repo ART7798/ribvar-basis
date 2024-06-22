@@ -8,6 +8,17 @@
   />
 </basis>
 
+<basis core="dbsource" source="basiscore" mid="20" name="db" lid="1">
+  <member
+    name="magazine-cat"
+    type="tree"
+    request="cat"
+    parentid="208166"
+    preview=""
+    order="ord"
+  />
+</basis>
+
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
   <head>
@@ -324,180 +335,76 @@
         class="articles__container flex flex-col lg:flex-row items-center lg:justify-start lg:items-start gap-4 my-20 lg:mt-[105px] lg:mb-[115px] overflow-hidden"
       >
         <!-- Dropdown Container -->
-        <div
-          class="relative lg:static flex justify-between items-center max-w-[464px] sm:!max-w-full w-full lg:block lg:w-auto"
-        >
-          <h3
-            class="font-medium text-lg md:text-[20px] text-rbvtxtprimary w-full block lg:hidden"
-          >
-            مجله گردشگری
-          </h3>
-          <!-- Dropdown Button -->
-          <button
-            id="filterButton"
-            class="lg:hidden bg-rbvblue text-white py-2 px-3 rounded-[10px] text-center hover:bg-rbvmain transition-all duration-300 flex items-center justify-between min-w-fit gap-2 lg:gap-4 text-sm xs:text-base"
-          >
-            فیلتر ها
-            <svg
-              class="transform rotate-0 transition-all duration-300"
-              width="24px"
-              height="24px"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              color="#fff"
+        <basis core="list" datamembername="db.magazine-cat">
+          <layout>
+            <div
+              class="relative lg:static flex justify-between items-center max-w-[464px] sm:!max-w-full w-full lg:block lg:w-auto"
             >
-              <path
-                d="M6 9L12 15L18 9"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
-
-          <!-- Filters -->
-          <div
-            id="filterDropdown"
-            class="lg:block hidden absolute lg:relative w-56 lg:w-72 2xl:!w-75 min-w-40 bg-white pb-10 pl-3 pr-5 pt-3 rounded-[10px] z-10 top-10 left-2 lg:left-0 lg:top-0 shadow-md lg:shadow-none max-h-[220px] lg:!max-h-max overflow-y-auto"
-          >
-            <form class="flex flex-nowrap flex-col gap-5" action="#">
               <h3
-                class="font-medium text-lg md:text-[20px] text-rbvtxtprimary mb-4 w-full hidden lg:block"
+                class="font-medium text-lg md:text-[20px] text-rbvtxtprimary w-full block lg:hidden"
               >
                 مجله گردشگری
               </h3>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="instanbul"
-                  type="radio"
-                  name="tourFilter"
-                  value="instanbul"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="instanbul"
-                  >استانبول</label
+              <!-- Dropdown Button -->
+              <button
+                id="filterButton"
+                class="lg:hidden bg-rbvblue text-white py-2 px-3 rounded-[10px] text-center hover:bg-rbvmain transition-all duration-300 flex items-center justify-between min-w-fit gap-2 lg:gap-4 text-sm xs:text-base"
+              >
+                فیلتر ها
+                <svg
+                  class="transform rotate-0 transition-all duration-300"
+                  width="24px"
+                  height="24px"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  color="#fff"
                 >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+
+              <!-- Filters -->
+              <div
+                id="filterDropdown"
+                class="lg:block hidden absolute lg:relative w-56 lg:w-72 2xl:!w-75 min-w-40 bg-white pb-10 pl-3 pr-5 pt-3 rounded-[10px] z-10 top-10 left-2 lg:left-0 lg:top-0 shadow-md lg:shadow-none max-h-[220px] lg:!max-h-max overflow-y-auto"
+              >
+                <form class="flex flex-nowrap flex-col gap-5" action="#">
+                  <h3
+                    class="font-medium text-lg md:text-[20px] text-rbvtxtprimary mb-4 w-full hidden lg:block"
+                  >
+                    مجله گردشگری
+                  </h3>
+                  @child
+                </form>
               </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="tiplis"
-                  type="radio"
-                  name="tourFilter"
-                  value="tiplis"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="tiplis"
-                  >تفلیس</label
-                >
-              </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="dubai"
-                  type="radio"
-                  name="tourFilter"
-                  value="dubai"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="dubai"
-                  >دبی</label
-                >
-              </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="malysia"
-                  type="radio"
-                  name="tourFilter"
-                  value="malysia"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="malysia"
-                  >مالزی</label
-                >
-              </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="singapor"
-                  type="radio"
-                  name="tourFilter"
-                  value="singapor"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="singapor"
-                  >سنگاپور</label
-                >
-              </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="maldiv"
-                  type="radio"
-                  name="tourFilter"
-                  value="maldiv"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="maldiv"
-                  >مالدیو</label
-                >
-              </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="china"
-                  type="radio"
-                  name="tourFilter"
-                  value="china"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="china"
-                  >چین</label
-                >
-              </div>
-              <div class="flex items-center gap-2 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="india"
-                  type="radio"
-                  name="tourFilter"
-                  value="india"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="india"
-                  >هند</label
-                >
-              </div>
-              <div class="flex items-center gap-1 group">
-                <input
-                  class="accent-rbvblue size-5 mb-1 cursor-pointer"
-                  id="canada"
-                  type="radio"
-                  name="tourFilter"
-                  value="canada"
-                />
-                <label
-                  class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
-                  for="canada"
-                  >کانادا</label
-                >
-              </div>
-            </form>
-          </div>
-        </div>
+            </div>
+          </layout>
+          <face>
+            <a href="@link" class="flex items-center gap-2 group">
+              <input
+                class="accent-rbvblue size-5 mb-1 cursor-pointer"
+                id="@title"
+                type="radio"
+                name="tourFilter"
+                value="@link"
+              />
+              <label
+                class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
+                for="@title"
+              >
+                <h3>@title</h3>
+              </label>
+            </a>
+          </face>
+        </basis>
 
         <!-- results container -->
         <div id="article-content-load" class="w-full"></div>

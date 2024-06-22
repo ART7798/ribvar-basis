@@ -173,7 +173,7 @@ try {
     fetch("/article-list-load.bc")
       .then((response) => response.text())
       .then((data) => {
-        document.getElementById("article-content-load").ap = data;
+        document.getElementById("article-content-load").innerHTML = data;
       });
   });
 } catch (error) {

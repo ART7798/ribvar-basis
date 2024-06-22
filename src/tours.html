@@ -1,3 +1,14 @@
+<basis core="dbsource" source="basiscore" mid="20" name="db" lid="1">
+  <member
+    name="tour-cat"
+    type="tree"
+    request="cat"
+    parentid="208116"
+    preview=""
+    order="ord"
+  />
+</basis>
+
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
   <head>
@@ -50,43 +61,78 @@
       <div
         class="tours__container flex flex-col lg:flex-row items-center lg:justify-start lg:items-start gap-4 my-20 lg:my-[115px] overflow-hidden"
       >
+        <!-- Filters -->
         <!-- Dropdown Container -->
-        <div
-          class="relative lg:static flex justify-between items-center max-w-[464px] sm:!max-w-full w-full lg:block lg:w-auto"
-        >
-          <h1
-            class="font-semibold text-lg md:text-[20px] lg:!text-[32px] text-rbvtxtprimary w-full block lg:hidden"
-          >
-            تورها
-          </h1>
-          <!-- Dropdown Button -->
-          <button
-            id="filterButton"
-            class="lg:hidden bg-rbvblue text-white py-2 px-3 rounded-[10px] text-center hover:bg-rbvmain transition-all duration-300 flex items-center justify-between min-w-fit gap-2 lg:gap-4 text-sm xs:text-base"
-          >
-            فیلتر ها
-            <svg
-              class="transform rotate-0 transition-all duration-300"
-              width="24px"
-              height="24px"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              color="#fff"
+        <basis core="list" datamembername="db.tour-cat">
+          <layout>
+            <div
+              class="relative lg:static flex justify-between items-center max-w-[464px] sm:!max-w-full w-full lg:block lg:w-auto"
             >
-              <path
-                d="M6 9L12 15L18 9"
-                stroke="#fff"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-          </button>
+              <h1
+                class="font-semibold text-lg md:text-[20px] lg:!text-[32px] text-rbvtxtprimary w-full block lg:hidden"
+              >
+                تورها
+              </h1>
+              <!-- Dropdown Button -->
+              <button
+                id="filterButton"
+                class="lg:hidden bg-rbvblue text-white py-2 px-3 rounded-[10px] text-center hover:bg-rbvmain transition-all duration-300 flex items-center justify-between min-w-fit gap-2 lg:gap-4 text-sm xs:text-base"
+              >
+                فیلتر ها
+                <svg
+                  class="transform rotate-0 transition-all duration-300"
+                  width="24px"
+                  height="24px"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  color="#fff"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="filterDropdown"
+                class="lg:block hidden absolute lg:relative w-56 lg:w-72 2xl:!w-75 min-w-40 bg-white pb-10 pl-3 pr-5 pt-3 rounded-[10px] z-10 top-10 left-2 lg:left-0 lg:top-0 shadow-md lg:shadow-none max-h-[220px] lg:!max-h-max overflow-y-auto"
+              >
+                <form class="flex flex-nowrap flex-col gap-5" action="#">
+                  <h2
+                    class="font-semibold text-lg md:text-[20px] lg:!text-[32px] text-rbvtxtprimary mb-4 w-full hidden lg:block"
+                  >
+                    تورها
+                  </h2>
+                  @child
+                </form>
+              </div>
+            </div>
+          </layout>
+          <face>
+            <a href="@link" class="flex items-center gap-2 group">
+              <input
+                class="accent-rbvblue size-5 mb-1 cursor-pointer"
+                id="@title"
+                type="radio"
+                name="tourFilter"
+                value="@link"
+              />
+              <label
+                class="group-hover:text-rbvblue group-hover:pr-1 transition-all duration-100 cursor-pointer text-[13px]"
+                for="@title"
+              >
+                <h3>@title</h3>
+              </label>
+            </a>
+          </face>
+        </basis>
 
-          <!-- Filters -->
-          <div
+        <!-- <div
             id="filterDropdown"
             class="lg:block hidden absolute lg:relative w-56 lg:w-72 2xl:!w-75 min-w-40 bg-white pb-10 pl-3 pr-5 pt-3 rounded-[10px] z-10 top-10 left-2 lg:left-0 lg:top-0 shadow-md lg:shadow-none max-h-[220px] lg:!max-h-max overflow-y-auto"
           >
@@ -232,8 +278,7 @@
                 </label>
               </div>
             </form>
-          </div>
-        </div>
+          </div> -->
 
         <!-- results container -->
         <div id="tour-content-load" class="w-full"></div>
