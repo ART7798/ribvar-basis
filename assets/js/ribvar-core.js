@@ -133,7 +133,7 @@ tourPriceElements.forEach((price) => {
 // pagination in tours page and magazines page
 document.addEventListener("DOMContentLoaded", function () {
   const params = new URLSearchParams(window.location.search);
-  const currentPage = params.get("pageno");
+  const currentPage = params.get("pageno") ?? 1;
   if (currentPage) {
     const pageLinks = document.querySelectorAll(".page-number");
 
