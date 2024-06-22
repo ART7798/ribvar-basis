@@ -2,22 +2,13 @@
   <member type="list" name="Daily-news" catId="208121" propertyId="7244" />
 </basis>
 
-<!-- <basis core="dbsource" source="basiscore" name="magazine" mid="1" lid="1">
-  <member
-    type="list"
-    name="Tourism-magazine"
-    catId="208166"
-    propertyId="7244"
-  />
-</basis> -->
-
 <basis core="dbsource" source="basiscore" name="magazine" mid="1" lid="1">
   <member
     type="list"
     name="Tourism-magazine"
     catId="208166"
     propertyId="7244"
-    perpage="2"
+    perpage="8"
     pageno="[##cms.query.pageno|(1)##]"
   />
   <member
@@ -174,6 +165,8 @@
               >
             </div>
             <img
+              width="700"
+              height="650"
               class="object-fill w-full md:w-1/2 xl:w-7/12 mx-auto !max-w-[400px] md:!max-w-[700px] !max-h-[650px] relative left-0 top-0 p-4 xl:p-0"
               src="@image"
               alt="@title"
@@ -296,6 +289,8 @@
               >
             </div>
             <img
+              width="700"
+              height="650"
               class="object-fill w-full md:w-1/2 xl:w-7/12 mx-auto !max-w-[400px] md:!max-w-[700px] !max-h-[650px] relative left-0 top-0 p-4 xl:p-0"
               src="@image"
               alt="@title"
@@ -507,6 +502,8 @@
                 class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
               >
                 <img
+                width="310"
+                height="215"
                   class="w-full h-[215px] rounded-[10px] !opacity-80 object-fill transform group-hover:scale-105 transition-all duration-300"
                   src="@image"
                   alt="@title"
@@ -627,6 +624,8 @@
                 class="min-w-72 2xl:!w-75 w-full xs:min-w-auto sm:w-[49%] sm:min-w-[300px] !max-w-[464px] sm:!max-w-full xl:!w-[24%] rounded-[10px] overflow-hidden group h-[395px]"
               >
                 <img
+                width="310"
+                height="215"
                   class="w-full h-[215px] rounded-[10px] !opacity-80 object-fill transform group-hover:scale-105 transition-all duration-300"
                   src="@image"
                   alt="@title"
@@ -797,69 +796,6 @@
               </face>
             </basis>
           </div>
-
-          <!-- pagination -->
-          <!-- <div
-            class="flex justify-center items-center gap-4 lg:gap-8 w-full mt-20 lg:mt-[102px]"
-          >
-            
-            <button>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.2365 12.8069C16.4593 12.584 16.5713 12.2915 16.5713 11.9989C16.5713 11.7063 16.4593 11.4138 16.2365 11.1909L9.37955 4.334C8.93271 3.8872 8.21045 3.8872 7.76361 4.334C7.31677 4.7809 7.31677 5.5031 7.76361 5.95L13.8125 11.9989L7.76361 18.0478C7.31677 18.4947 7.31677 19.2169 7.76361 19.6638C8.21045 20.1106 8.93271 20.1106 9.37955 19.6638L16.2365 12.8069Z"
-                  fill="#2032A9"
-                />
-              </svg>
-            </button>
-
-            <div class="flex flex-row-reverse gap-1.5 text-white">
-              <div
-                class="size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
-              >
-                1
-              </div>
-
-              <div
-                class="size-[26px] text-[13px] bg-rbvblue rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
-              >
-                2
-              </div>
-
-              <div
-                class="size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
-              >
-                3
-              </div>
-
-              <div
-                class="size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
-              >
-                4
-              </div>
-            </div>
-
-            
-            <button>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7.76351 11.1931C7.54071 11.416 7.42871 11.7085 7.42871 12.0011C7.42871 12.2937 7.54071 12.5862 7.76351 12.8091L14.6205 19.666C15.0673 20.1128 15.7895 20.1128 16.2364 19.666C16.6832 19.2191 16.6832 18.4969 16.2364 18.05L10.1875 12.0011L16.2364 5.95217C16.6832 5.50533 16.6832 4.78307 16.2364 4.33623C15.7896 3.88939 15.0673 3.88939 14.6205 4.33623L7.76351 11.1931Z"
-                  fill="#2032A9"
-                />
-              </svg>
-            </button>
-          </div> -->
         </div>
       </div>
     </section>

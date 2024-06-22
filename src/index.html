@@ -28,19 +28,9 @@
     name="Tourism-magazine"
     catId="208166"
     propertyId="7244"
-    perpage="4"
+    perpage="6"
   />
 </basis>
-
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="5"
-  lid="1"
-  usedforid="[##cms.cms.ownerid##]"
-  ><member name="info" type="view"></member
-></basis>
 
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
@@ -96,6 +86,8 @@
         class="swiper-pagination-hero flex justify-center !bottom-5 sm:!bottom-10 z-20 absolute"
       ></div>
     </div>
+
+    <h1 class="hidden">ریبوار</h1>
 
     <!-- tours -->
     <basis core="list" datamembername="tours.The-latest-tours">
@@ -179,165 +171,13 @@
         </section>
       </layout>
 
-      <face filter="link is null and prp_8076 is null">
-        <div
-          class="swiper-slide tours__container__card tourCard w-72 2xl:!w-75 h-85 rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
-        >
-          <img
-            src="@image"
-            alt="@title"
-            class="tourCard__img object-cover w-full h-full"
-          />
-
-          <div
-            class="tourCard__container absolute bg-gradient-to-t from-rbvlinearblack to-transparent w-full h-full top-0 left-0 text-white flex flex-col justify-between p-3"
-          >
-            <!-- tour card head section (airline and rating) -->
-            <div
-              class="tourCard__container__head flex justify-between items-center"
-            >
-              <div
-                class="tourCard__container__head__rating flex justify-center items-center bg-rbvbgaccent rounded-md w-[34px] h-[30px]"
-              >
-                <span class="text-[#6A500C]">8.8</span>
-              </div>
-
-              <div
-                class="tourCard__container__head__airline flex justify-center items-center gap-0.5"
-              >
-                <span class="pt-1">@prp_10000504</span>
-                <img
-                  src="[##cms.cms.cdn##]/images/tours/Turkish.svg"
-                  alt="turkishImg"
-                />
-              </div>
-            </div>
-
-            <!-- tour card description section (city, duration price and etc.) -->
-            <div class="tourCard__container__desc text-white">
-              <!-- card description title -->
-              <h3
-                class="tourCard__container__desc__title font-bold text-2xl mb-3"
-              >
-                @title
-              </h3>
-
-              <!-- card description period -->
-              <div
-                class="tourCard__container__desc__details flex justify-between mb-5 gap-5"
-              >
-                <div class="flex justify-center items-end gap-1">
-                  <span class="text-sm font-medium">@date</span>
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.59375 9.40234H21.4177"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16.9453 13.3086H16.9546"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.5078 13.3086H12.5171"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8.05469 13.3086H8.06395"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16.9453 17.1953H16.9546"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M12.5078 17.1953H12.5171"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8.05469 17.1953H8.06395"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16.5469 2V5.29078"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M8.46875 2V5.29078"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M16.7383 3.57812H8.27096C5.33427 3.57812 3.5 5.21406 3.5 8.22115V17.2708C3.5 20.3252 5.33427 21.9989 8.27096 21.9989H16.729C19.675 21.9989 21.5 20.3535 21.5 17.3464V8.22115C21.5092 5.21406 19.6842 3.57812 16.7383 3.57812Z"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <!-- tour card price and see more section -->
-              <div
-                class="tourCard__container__more flex items-end justify-between"
-              >
-                <a
-                  class="w-[115px] h-[36px] border border-white border-solid flex justify-center items-center rounded-[10px] hover:border-rbvhelpersecondary hover:bg-rbvmain hover:scale-105 hover:text-white duration-100 text-sm font-normal mb-2"
-                  href="#"
-                  >مشاهده</a
-                >
-
-                <div class="flex flex-col items-end">
-                  <span class="font-medium text-[20px]">تومان</span>
-                  <span class="font-normal text-[20px] tour-price"
-                    >@prp_8181</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </face>
-
       <face filter="link is null">
         <div
           class="swiper-slide tours__container__card tourCard w-72 2xl:!w-75 h-85 rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
         >
           <img
+            width="310"
+            height="350"
             src="@image"
             alt="@title"
             class="tourCard__img object-cover w-full h-full"
@@ -541,6 +381,8 @@
           class="swiper-slide tours__container__card tourCard w-72 2xl:!w-75 h-85 rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
         >
           <img
+            width="310"
+            height="350"
             src="@image"
             alt="@title"
             class="tourCard__img object-cover w-full h-full"
@@ -769,6 +611,8 @@
           class="tours__container__card tourCard min-w-72 2xl:!w-75 h-73 w-full xs:min-w-auto sm:w-[48%] sm:min-w-[300px] !max-w-[464px] xl:!w-[24%] rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
         >
           <img
+            width="310"
+            height="294"
             src="@image"
             alt="@title"
             class="tourCard__img object-fill w-full h-full"
@@ -810,6 +654,8 @@
           class="tours__container__card tourCard min-w-72 2xl:!w-75 h-73 w-full xs:min-w-auto sm:w-[48%] sm:min-w-[300px] !max-w-[464px] xl:!w-[24%] rounded-[10px] overflow-hidden relative hover:shadow-lg bg-white"
         >
           <img
+            width="310"
+            height="294"
             src="@image"
             alt="@title"
             class="tourCard__img object-fill w-full h-full"
@@ -1045,6 +891,8 @@
               >
             </div>
             <img
+              width="700"
+              height="650"
               class="object-fill w-full md:w-1/2 xl:w-7/12 p-4 xl:p-0 mx-auto !max-w-[400px] !max-h-[650px] md:!max-w-[700px] relative left-0 -top-[100px] lg:-top-[80px]"
               src="@image"
               alt="@title"
@@ -1194,6 +1042,8 @@
               >
             </div>
             <img
+              width="700"
+              height="650"
               class="object-fill w-full md:w-1/2 xl:w-7/12 p-4 xl:p-0 mx-auto !max-w-[400px] !max-h-[650px] md:!max-w-[700px] relative left-0 -top-[100px] lg:-top-[80px]"
               src="@image"
               alt="@title"
@@ -1219,6 +1069,8 @@
           class="min-w-72 2xl:!w-75 h-[370px] w-full xs:min-w-auto sm:w-[48%] sm:min-w-[300px] !max-w-[464px] xl:!w-[24%] rounded-[10px] overflow-hidden group bg-white"
         >
           <img
+            width="310"
+            height="190"
             class="w-full max-h-48 object-fill transform group-hover:scale-105 transition-all duration-300 overflow-hidden"
             src="@image"
             alt="@title"
@@ -1338,6 +1190,8 @@
           class="min-w-72 2xl:!w-75 h-[370px] w-full xs:min-w-auto sm:w-[48%] sm:min-w-[300px] !max-w-[464px] xl:!w-[24%] rounded-[10px] overflow-hidden group bg-white"
         >
           <img
+            width="310"
+            height="190"
             class="w-full max-h-48 object-fill transform group-hover:scale-105 transition-all duration-300 overflow-hidden"
             src="@image"
             alt="@title"
@@ -1472,7 +1326,7 @@
 
           <a
             class="w-max flex justify-center items-cente hover:text-rbvhelpersecondary duration-300 text-[#0487FF] font-normal text-sm"
-            href="/about.bc"
+            href="/ارتباط-با-ما"
             >مشاهده ادامه مطلب</a
           >
         </section>
