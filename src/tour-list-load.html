@@ -435,7 +435,10 @@
 >
   <basis core="print" datamembername="tours.paging">
     <face filter="sta='nex'"
-      ><a href="[##cms.cms.link_page##]pageno=@page">
+      ><a
+        href="/tour-list-load.bc?catid=[##cms.query.catid##]&pageno=@page
+"
+      >
         <svg
           width="24"
           height="24"
@@ -455,7 +458,8 @@
     <basis core="print" datamembername="tours.paging">
       <face filter="sta='no'">
         <a
-          href="[##cms.cms.link_page##]pageno=@page"
+          href="/tour-list-load.bc?catid=[##cms.query.catid##]&pageno=@page
+"
           class="page-number size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
         >
           @page
@@ -465,7 +469,10 @@
   </div>
   <basis core="print" datamembername="tours.paging">
     <face filter="sta='pre'">
-      <a href="[##cms.cms.link_page##]pageno=@page">
+      <a
+        href="/tour-list-load.bc?catid=[##cms.query.catid##]&pageno=@page
+"
+      >
         <svg
           width="24"
           height="24"

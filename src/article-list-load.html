@@ -278,7 +278,9 @@
 >
   <basis core="print" datamembername="magazine.paging">
     <face filter="sta='nex'"
-      ><a href="[##cms.cms.link_page##]pageno=@page">
+      ><div
+        onclick="articleContentLoad('[##cms.query.catid##]','@page')"
+      >
         <svg
           width="24"
           height="24"
@@ -291,24 +293,26 @@
             fill="#2032A9"
           />
         </svg>
-      </a>
+      </div>
     </face>
   </basis>
   <div class="flex flex-row-reverse gap-1.5 text-white">
     <basis core="print" datamembername="magazine.paging">
       <face filter="sta='no'">
-        <a
-          href="[##cms.cms.link_page##]pageno=@page"
+        <div
+          onclick="articleContentLoad('[##cms.query.catid##]','@page')"
           class="page-number size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
         >
           @page
-        </a>
+        </div>
       </face>
     </basis>
   </div>
   <basis core="print" datamembername="magazine.paging">
     <face filter="sta='pre'">
-      <a href="[##cms.cms.link_page##]pageno=@page">
+      <div
+        onclick="articleContentLoad('[##cms.query.catid##]','@page')"
+      >
         <svg
           width="24"
           height="24"
@@ -321,7 +325,7 @@
             fill="#2032A9"
           />
         </svg>
-      </a>
+      </div>
     </face>
   </basis>
 </div>

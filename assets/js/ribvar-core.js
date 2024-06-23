@@ -154,38 +154,56 @@ try {
   console.log(error);
 }
 
-// tour load
+// tour load onClick
+try {
+  function tourContentLoad(param) {
+    let catId =
+      param?.childNodes[1]?.defaultValue ??
+      document.getElementById("tour-content-load").dataset.catid;
+
+    fetch(`/tour-list-load.bc?catid=${catId}`)
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("tour-content-load").innerHTML = data;
+      });
+  }
+} catch (error) {
+  console.log(error);
+}
+
+// tour load onLoad
 try {
   if (document.getElementById("tour-content-load")) {
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch(
-        `/tour-list-load.bc?catid=${
-          document.getElementById("tour-content-load").dataset.catid
-        }`
-      )
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("tour-content-load").innerHTML = data;
-        });
+    window.addEventListener("DOMContentLoaded", function () {
+      tourContentLoad();
     });
   }
 } catch (error) {
   console.log(error);
 }
 
-// article load
+// article load onClick
+try {
+  function articleContentLoad(param, page = "1") {
+    let catId =
+      param?.childNodes[1]?.defaultValue ??
+      document.getElementById("article-content-load").dataset.catid;
+
+    fetch(`/article-list-load.bc?catid=${catId}&pageno=${page}`)
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("article-content-load").innerHTML = data;
+      });
+  }
+} catch (error) {
+  console.log(error);
+}
+
+// article load onLoad
 try {
   if (document.getElementById("article-content-load")) {
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch(
-        `/article-list-load.bc?catid=${
-          document.getElementById("article-content-load").dataset.catid
-        }`
-      )
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("article-content-load").innerHTML = data;
-        });
+    window.addEventListener("DOMContentLoaded", function () {
+      articleContentLoad();
     });
   }
 } catch (error) {
@@ -208,31 +226,6 @@ try {
       });
     }
   });
-} catch (error) {
-  console.log(error);
-}
-
-// article load
-try {
-  function articleContentLoad(param) {
-      console.log(param.childNodes);
-  }
-  // const articleContentLoad = (this) => {
-  //   console.log(this);
-    // if (document.getElementById("article-content-load")) {
-    //   document.addEventListener("DOMContentLoaded", function () {
-    //     fetch(
-    //       `/article-list-load.bc?catid=${
-    //         document.getElementById("article-content-load").dataset.catid
-    //       }`
-    //     )
-    //       .then((response) => response.text())
-    //       .then((data) => {
-    //         document.getElementById("article-content-load").innerHTML = data;
-    //       });
-    //   });
-    // }
-  // };
 } catch (error) {
   console.log(error);
 }
