@@ -350,3 +350,23 @@ input[type="radio"]:checked::after {
 .home-body .header {
   position: absolute !important;
 }
+
+.phone-numbers a:first-of-type {
+  position: relative;
+  margin-left: 6px;
+}
+.phone-numbers a:first-of-type::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 1px;
+  left: -6px;
+  top: 0%;
+  background-color: var(--rbvtxtprimary);
+}
+@media only screen and (min-width: 768px) {
+  .phone-numbers a:first-of-type::before {
+    top: 10%;
+    width: 2px;
+  }
+}
