@@ -114,7 +114,7 @@
             </div>
           </layout>
           <face>
-            <a href="@link" class="flex items-center gap-2 group">
+            <div class="flex items-center gap-2 group">
               <input
                 class="accent-rbvblue size-5 mb-1 cursor-pointer"
                 id="@title"
@@ -128,7 +128,7 @@
               >
                 <h3>@title</h3>
               </label>
-            </a>
+            </div>
           </face>
         </basis>
 
@@ -281,7 +281,11 @@
           </div> -->
 
         <!-- results container -->
-        <div id="tour-content-load" class="w-full"></div>
+        <div
+          id="tour-content-load"
+          class="w-full"
+          data-catid="[##cms.query.catid##]"
+        ></div>
       </div>
     </section>
 

@@ -156,26 +156,40 @@ try {
 
 // tour load
 try {
-  document.addEventListener("DOMContentLoaded", function () {
-    fetch("/tour-list-load.bc")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("tour-content-load").innerHTML = data;
-      });
-  });
+  if (document.getElementById("tour-content-load")) {
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch(
+        `/tour-list-load.bc?catid=${
+          document.getElementById("tour-content-load").dataset.catid
+        }`
+      )
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("tour-content-load").innerHTML = data;
+        });
+    });
+  }
 } catch (error) {
   console.log(error);
 }
 
+
+
 // article load
 try {
-  document.addEventListener("DOMContentLoaded", function () {
-    fetch("/article-list-load.bc")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("article-content-load").innerHTML = data;
-      });
-  });
+  if (document.getElementById("article-content-load")) {
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch(
+        `/article-list-load.bc?catid=${
+          document.getElementById("article-content-load").dataset.catid
+        }`
+      )
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("article-content-load").innerHTML = data;
+        });
+    });
+  }
 } catch (error) {
   console.log(error);
 }
