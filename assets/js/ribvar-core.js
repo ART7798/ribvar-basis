@@ -156,12 +156,16 @@ try {
 
 // tour load onClick
 try {
-  function tourContentLoad(param) {
-    let catId =
-      param?.childNodes[1]?.defaultValue ??
-      document.getElementById("tour-content-load").dataset.catid;
-
-    fetch(`/tour-list-load.bc?catid=${catId}`)
+  function tourContentLoad(param, page = "1") {
+    let catId = document.getElementById("tour-content-load").dataset.catid;
+    if (param?.childNodes) {
+      if (param?.childNodes[1]?.defaultValue) {
+        catId = param?.childNodes[1]?.defaultValue;
+      } else {
+        catId = document.getElementById("tour-content-load").dataset.catid;
+      }
+    }
+    fetch(`/tour-list-load.bc?catid=${catId}&pageno=${page}`)
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("tour-content-load").innerHTML = data;
@@ -185,10 +189,14 @@ try {
 // article load onClick
 try {
   function articleContentLoad(param, page = "1") {
-    let catId =
-      param?.childNodes[1]?.defaultValue ??
-      document.getElementById("article-content-load").dataset.catid;
-
+    let catId = document.getElementById("article-content-load").dataset.catid;
+    if (param?.childNodes) {
+      if (param?.childNodes[1]?.defaultValue) {
+        catId = param?.childNodes[1]?.defaultValue;
+      } else {
+        catId = document.getElementById("article-content-load").dataset.catid;
+      }
+    }
     fetch(`/article-list-load.bc?catid=${catId}&pageno=${page}`)
       .then((response) => response.text())
       .then((data) => {

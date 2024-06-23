@@ -435,10 +435,7 @@
 >
   <basis core="print" datamembername="tours.paging">
     <face filter="sta='nex'"
-      ><a
-        href="/tour-list-load.bc?catid=[##cms.query.catid##]&pageno=@page
-"
-      >
+      ><div onclick="tourContentLoad('[##cms.query.catid##]','@page')">
         <svg
           width="24"
           height="24"
@@ -451,28 +448,24 @@
             fill="#2032A9"
           />
         </svg>
-      </a>
+      </div>
     </face>
   </basis>
   <div class="flex flex-row-reverse gap-1.5 text-white">
     <basis core="print" datamembername="tours.paging">
       <face filter="sta='no'">
-        <a
-          href="/tour-list-load.bc?catid=[##cms.query.catid##]&pageno=@page
-"
+        <div
+          onclick="tourContentLoad('[##cms.query.catid##]','@page')"
           class="page-number size-[26px] text-[13px] bg-rbvhelpersecondary rounded-lg flex justify-center items-center leading-normal hover:opacity-75 cursor-pointer transition-opacity duration-300"
         >
           @page
-        </a>
+        </div>
       </face>
     </basis>
   </div>
   <basis core="print" datamembername="tours.paging">
     <face filter="sta='pre'">
-      <a
-        href="/tour-list-load.bc?catid=[##cms.query.catid##]&pageno=@page
-"
-      >
+      <div onclick="tourContentLoad('[##cms.query.catid##]','@page')">
         <svg
           width="24"
           height="24"
@@ -485,7 +478,7 @@
             fill="#2032A9"
           />
         </svg>
-      </a>
+      </div>
     </face>
   </basis>
 </div>
