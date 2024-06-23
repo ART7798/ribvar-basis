@@ -40,7 +40,7 @@
     </basis>
     <basis core="print" datamembername="tag.list">
       <face filter="key = 'canonical'">
-        <link rel="canonical" href="@value" />
+        <link rel="canonical" href="/@value" />
       </face>
       <face>
         <meta property="@key" content="@value" />
@@ -310,7 +310,7 @@
 
               <a
                 class="min-h-9 w-max px-5 py-2 border text-rbvblue border-rbvblue border-solid mb-0 flex justify-center items-center rounded-lg hover:bg-rbvmain hover:border-rbvhelpersecondary hover:text-white hover:scale-105 duration-100"
-                href="@link"
+                href="/@link"
                 >خواندن مطلب</a
               >
             </div>
@@ -388,7 +388,10 @@
             </div>
           </layout>
           <face>
-            <div class="flex items-center gap-2 group" onclick="articleContentLoad(this)">
+            <div
+              class="flex items-center gap-2 group"
+              onclick="articleContentLoad(this)"
+            >
               <input
                 class="accent-rbvblue size-5 mb-1 cursor-pointer"
                 id="@title"
