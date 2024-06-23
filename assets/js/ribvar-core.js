@@ -173,8 +173,6 @@ try {
   console.log(error);
 }
 
-
-
 // article load
 try {
   if (document.getElementById("article-content-load")) {
@@ -210,6 +208,31 @@ try {
       });
     }
   });
+} catch (error) {
+  console.log(error);
+}
+
+// article load
+try {
+  function articleContentLoad(param) {
+      console.log(param.childNodes);
+  }
+  // const articleContentLoad = (this) => {
+  //   console.log(this);
+    // if (document.getElementById("article-content-load")) {
+    //   document.addEventListener("DOMContentLoaded", function () {
+    //     fetch(
+    //       `/article-list-load.bc?catid=${
+    //         document.getElementById("article-content-load").dataset.catid
+    //       }`
+    //     )
+    //       .then((response) => response.text())
+    //       .then((data) => {
+    //         document.getElementById("article-content-load").innerHTML = data;
+    //       });
+    //   });
+    // }
+  // };
 } catch (error) {
   console.log(error);
 }
